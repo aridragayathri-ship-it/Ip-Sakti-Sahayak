@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in — IP-SAKTI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-side">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#FBF8F1" stroke-width="2"/>
+        <path d="M20 8C20 8 12 14 12 22C12 27 15.5 30 20 30C24.5 30 28 27 28 22C28 14 20 8 20 8Z" fill="#FBF8F1"/>
+        <path d="M20 30V13" stroke="#CE8A2E" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      IP-SAKTI
+    </a>
+    <p class="auth-side-quote">"Protect. Comply. Innovate."<span>Evidence-backed AI guidance for Ayurvedic intellectual property and regulatory decisions.</span></p>
+    <svg class="auth-leaf" width="220" height="220" viewBox="0 0 220 220" style="position:absolute; right:-40px; bottom:-40px;">
+      <circle cx="110" cy="110" r="108" stroke="#FBF8F1" stroke-width="1.5" fill="none"/>
+      <circle cx="110" cy="110" r="70" stroke="#FBF8F1" stroke-width="1.5" fill="none"/>
+    </svg>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p>Log in to continue where you left off.</p>
+
+      <div id="formBanner" class="form-banner"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="field" id="emailField">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <div class="field-error">Enter a valid email address.</div>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password">Password</label>
+          <div class="password-row">
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" />
+            <button type="button" class="toggle-pw" data-target="password">Show</button>
+          </div>
+          <div class="field-error">Enter your password.</div>
+        </div>
+
+        <div class="row-between">
+          <label class="checkbox-row">
+            <input type="checkbox" id="remember" />
+            Remember me
+          </label>
+          <a href="#" class="link" id="forgotLink">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+
+      <p class="auth-foot">Don't have an account? <a href="signup.html" class="link">Sign up</a></p>
+
+      <div class="proto-note">
+        <span>⚠</span>
+        <span>Prototype-only authentication. Credentials are stored in your browser's local storage and are not sent anywhere or verified for security.</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => IPSAKTI.initLoginPage());
+</script>
+</body>
+</html>

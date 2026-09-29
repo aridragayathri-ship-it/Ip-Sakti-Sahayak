@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — IP-SAKTI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="disclaimer-bar">
+  This prototype provides informational guidance and is <strong>not a substitute for professional legal advice</strong>.
+</div>
+
+<div class="app-shell">
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="dashboard.html" class="brand" style="font-size:1.05rem;">
+        <svg class="brand-mark" width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" stroke="#1B6E62" stroke-width="2"/>
+          <path d="M20 8C20 8 12 14 12 22C12 27 15.5 30 20 30C24.5 30 28 27 28 22C28 14 20 8 20 8Z" fill="#1B6E62"/>
+          <path d="M20 30V13" stroke="#CE8A2E" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        IP-SAKTI
+      </a>
+      <nav class="app-nav" id="appNav">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="ask">Ask IP-SAKTI</button>
+        <button data-view="classify">Product Classification</button>
+        <button data-view="evidence">Evidence</button>
+        <button data-view="about">About</button>
+      </nav>
+      <div class="app-user">
+        <div class="avatar" id="userAvatar">?</div>
+        <span id="userName">—</span>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="container">
+
+      <!-- ================= DASHBOARD VIEW ================= -->
+      <section class="view active" id="view-dashboard">
+        <div class="view-head">
+          <span class="kicker">Overview</span>
+          <h1>Evidence-backed AI guidance for Ayurvedic intellectual property and regulatory decisions.</h1>
+          <p>Pick where you want to start. Every module below uses the same sample knowledge base so you can move between them freely.</p>
+        </div>
+
+        <div class="card-grid">
+          <button class="feature-card go-card" data-view="ask" style="text-align:left; border:1px solid var(--line); width:100%; cursor:pointer; font:inherit;">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M7 4h10a2 2 0 012 2v13l-3-2-2 2-2-2-2 2-2-2-3 2V6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Patent guidance</h3>
+            <p>Ask a free-form question and get a jurisdiction-aware read on patentability.</p>
+          </button>
+          <button class="feature-card go-card" data-view="classify" style="text-align:left; border:1px solid var(--line); width:100%; cursor:pointer; font:inherit;">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4zm0 5l8 4 8-4m-16 5l8 4 8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Product classification</h3>
+            <p>Answer four quick questions to see how your formulation is likely to be treated.</p>
+          </button>
+          <button class="feature-card go-card" data-view="ask" style="text-align:left; border:1px solid var(--line); width:100%; cursor:pointer; font:inherit;">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 20 12 17l-5.5 3 1-6.5L3 9l6-1 3-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Regulatory guidance</h3>
+            <p>Understand which authority and pathway typically apply to your product type.</p>
+          </button>
+          <button class="feature-card go-card" data-view="evidence" style="text-align:left; border:1px solid var(--line); width:100%; cursor:pointer; font:inherit;">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Traditional knowledge</h3>
+            <p>Browse sample citations that explain why traditional-knowledge checks matter.</p>
+          </button>
+          <button class="feature-card go-card" data-view="ask" style="text-align:left; border:1px solid var(--line); width:100%; cursor:pointer; font:inherit;">
+            <div class="feature-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>India &amp; international</h3>
+            <p>Toggle jurisdiction on any question to compare India-first and international framing.</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= ASK VIEW ================= -->
+      <section class="view" id="view-ask">
+        <div class="view-head">
+          <span class="kicker">Ask IP-SAKTI</span>
+          <h1>Ask a question about your formulation</h1>
+          <p>Describe what you're trying to protect or classify. Responses are generated from a small prototype knowledge base — always confirm with a qualified professional.</p>
+        </div>
+
+        <div class="ask-panel">
+          <div class="ask-row">
+            <textarea id="askInput" placeholder="e.g. Can I patent a new ratio of ashwagandha and brahmi for a stress-relief tablet?"></textarea>
+          </div>
+          <div class="ask-options">
+            <div class="pill-select" id="jurisdictionSelect">
+              <button type="button" data-value="india" class="active">India</button>
+              <button type="button" data-value="international">International</button>
+            </div>
+            <button class="btn btn-primary" id="analyzeBtn">Analyze</button>
+          </div>
+          <div class="examples" id="exampleChips">
+            <button class="example-chip" data-q="Can I patent a traditional Ayurvedic formulation with a new delivery method?">Patent a new delivery method?</button>
+            <button class="example-chip" data-q="Is a herbal immunity tea classified as a food or a drug in India?">Herbal tea: food or drug?</button>
+            <button class="example-chip" data-q="Do I need to check the TKDL before filing a patent for a herbal cosmetic?">Should I check the TKDL first?</button>
+            <button class="example-chip" data-q="What regulatory approval is needed to export an Ayurvedic supplement internationally?">Exporting a supplement internationally?</button>
+          </div>
+        </div>
+
+        <div class="result-card" id="askResult">
+          <div class="result-top">
+            <h3 id="resultHeading" style="margin-bottom:0;">AI Analysis</h3>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="evidence-tag" id="modeBadge" style="margin-bottom:0;">Demo Mode</span>
+              <span class="confidence-badge" id="confidenceBadge">Confidence: Medium</span>
+            </div>
+          </div>
+          <p id="resultAnswer">—</p>
+          <div class="result-meta">
+            <div class="meta-block">
+              <div class="meta-label">Product category</div>
+              <div class="meta-value" id="resultCategory">—</div>
+            </div>
+            <div class="meta-block">
+              <div class="meta-label">Jurisdiction</div>
+              <div class="meta-value" id="resultJurisdiction">—</div>
+            </div>
+            <div class="meta-block">
+              <div class="meta-label">Confidence</div>
+              <div class="meta-value" id="resultConfidenceValue">—</div>
+            </div>
+          </div>
+          <div class="next-steps">
+            <strong>Recommended next steps</strong>
+            <ol id="resultSteps"></ol>
+          </div>
+          <div class="next-steps" id="resultEvidenceBlock" style="display:none;">
+            <strong>Evidence from the knowledge base</strong>
+            <div id="resultEvidenceList" style="margin-top:10px; display:flex; flex-direction:column; gap:10px;"></div>
+          </div>
+          <p class="result-disclaimer" id="resultDisclaimer">Generated from prototype sample data for demonstration only. This is not legal advice and has not been verified against current law.</p>
+        </div>
+      </section>
+
+      <!-- ================= CLASSIFICATION VIEW ================= -->
+      <section class="view" id="view-classify">
+        <div class="view-head">
+          <span class="kicker">Product classification</span>
+          <h1>Classify your formulation</h1>
+          <p>Answer a few questions about the product to see a sample classification outcome and what it typically implies.</p>
+        </div>
+
+        <div class="classify-grid">
+          <form class="classify-form" id="classifyForm">
+            <div class="option-group">
+              <label>Product type</label>
+              <div class="option-set" id="productTypeSet">
+                <input type="radio" name="productType" id="pt-classical" value="Classical formulation" checked><label for="pt-classical">Classical formulation</label>
+                <input type="radio" name="productType" id="pt-proprietary" value="Proprietary medicine"><label for="pt-proprietary">Proprietary medicine</label>
+                <input type="radio" name="productType" id="pt-new" value="New/non-classical drug"><label for="pt-new">New / non-classical drug</label>
+                <input type="radio" name="productType" id="pt-phyto" value="Phytopharmaceutical"><label for="pt-phyto">Phytopharmaceutical</label>
+                <input type="radio" name="productType" id="pt-nutra" value="Ayurveda-Aahar/nutraceutical"><label for="pt-nutra">Ayurveda-Aahar / nutraceutical</label>
+                <input type="radio" name="productType" id="pt-cosmetic" value="Cosmetic"><label for="pt-cosmetic">Cosmetic</label>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label>Built on documented traditional knowledge?</label>
+              <div class="option-set" id="tkSet">
+                <input type="radio" name="tk" id="tk-yes" value="Yes" checked><label for="tk-yes">Yes</label>
+                <input type="radio" name="tk" id="tk-no" value="No"><label for="tk-no">No</label>
+                <input type="radio" name="tk" id="tk-unsure" value="Not sure"><label for="tk-unsure">Not sure</label>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label>Uses biological resources (plants, extracts, microbes)?</label>
+              <div class="option-set" id="bioSet">
+                <input type="radio" name="bio" id="bio-yes" value="Yes" checked><label for="bio-yes">Yes</label>
+                <input type="radio" name="bio" id="bio-no" value="No"><label for="bio-no">No</label>
+                <input type="radio" name="bio" id="bio-unsure" value="Not sure"><label for="bio-unsure">Not sure</label>
+              </div>
+            </div>
+
+            <div class="option-group">
+              <label>Target market</label>
+              <div class="option-set" id="marketSet">
+                <input type="radio" name="market" id="mkt-india" value="India" checked><label for="mkt-india">India</label>
+                <input type="radio" name="market" id="mkt-intl" value="International"><label for="mkt-intl">International</label>
+                <input type="radio" name="market" id="mkt-both" value="Both"><label for="mkt-both">Both</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Classify product</button>
+          </form>
+
+          <div class="classify-result" id="classifyResult">
+            <div class="classify-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4zm0 5l8 4 8-4m-16 5l8 4 8-4" stroke="#66756C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p>Fill in the form and select <strong>Classify product</strong> to see a sample outcome here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EVIDENCE VIEW ================= -->
+      <section class="view" id="view-evidence">
+        <div class="view-head">
+          <span class="kicker">Evidence</span>
+          <h1>Sample citation library</h1>
+          <p>A small set of prototype citations used to demonstrate how IP-SAKTI would ground its answers in source material.</p>
+        </div>
+
+        <div class="evidence-list">
+          <div class="evidence-card">
+            <div class="evidence-top">
+              <div>
+                <span class="evidence-tag">Patents Act, 1970 · Section 3(p)</span>
+                <h3>What counts as "traditional knowledge" for patent purposes</h3>
+              </div>
+              <span class="proto-flag">Prototype content</span>
+            </div>
+            <p class="evidence-excerpt">Sample summary: inventions that are essentially a known traditional-knowledge component, or an aggregation of traditionally known properties, are generally treated as not patentable on their own.</p>
+            <p class="evidence-source">Source label: Prototype Knowledge Base — India, Patent Law · Not verified against the current statute.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('This is a prototype. In a production build, this would open the verified source document.')">View source</button>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-top">
+              <div>
+                <span class="evidence-tag">Biological Diversity Act, 2002</span>
+                <h3>Approvals for accessing biological resources</h3>
+              </div>
+              <span class="proto-flag">Prototype content</span>
+            </div>
+            <p class="evidence-excerpt">Sample summary: obtaining or using certain biological resources and associated knowledge for research or commercial purposes may require prior approval from the relevant biodiversity authority.</p>
+            <p class="evidence-source">Source label: Prototype Knowledge Base — India, Biodiversity Law · Not verified against the current statute.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('This is a prototype. In a production build, this would open the verified source document.')">View source</button>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-top">
+              <div>
+                <span class="evidence-tag">TKDL Access Guidelines</span>
+                <h3>Why a prior-art search matters before filing</h3>
+              </div>
+              <span class="proto-flag">Prototype content</span>
+            </div>
+            <p class="evidence-excerpt">Sample summary: the Traditional Knowledge Digital Library is commonly used by patent offices to check whether a claimed invention already exists as documented traditional knowledge.</p>
+            <p class="evidence-source">Source label: Prototype Knowledge Base — India, Traditional Knowledge · Not verified against the current statute.</p>
+            <button class="btn btn-outline btn-sm" onclick="alert('This is a prototype. In a production build, this would open the verified source document.')">View source</button>
+          </div>
+        </div>
+
+        <p class="result-disclaimer" style="margin-top:22px;">All excerpts above are dummy, illustrative summaries written for this prototype. They do not represent verified legal text and should not be relied on as such.</p>
+      </section>
+
+      <!-- ================= ABOUT VIEW ================= -->
+      <section class="view" id="view-about">
+        <div class="view-head">
+          <span class="kicker">About</span>
+          <h1>About this prototype</h1>
+          <p>IP-SAKTI was built as a Smart India Hackathon prototype to demonstrate how an AI assistant could help Ayurvedic innovators navigate intellectual property and regulatory questions.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>What this is</h3>
+            <p>A front-end-only demo with dummy AI responses, sample citations, and browser-local authentication — built to show the intended user experience.</p>
+          </div>
+          <div class="about-card">
+            <h3>What this isn't</h3>
+            <p>There is no real backend, no real AI model call, no verified legal database, and no real user accounts behind this build.</p>
+          </div>
+          <div class="about-card">
+            <h3>Disclaimer</h3>
+            <p>This prototype provides informational guidance and is not a substitute for professional legal advice.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="auth.js"></script>
+<script src="app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    IPSAKTI.guardDashboard();
+    IPSAKTI.initDashboard();
+  });
+</script>
+</body>
+</html>

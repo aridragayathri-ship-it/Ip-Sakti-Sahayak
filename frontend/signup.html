@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign up — IP-SAKTI</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-side">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#FBF8F1" stroke-width="2"/>
+        <path d="M20 8C20 8 12 14 12 22C12 27 15.5 30 20 30C24.5 30 28 27 28 22C28 14 20 8 20 8Z" fill="#FBF8F1"/>
+        <path d="M20 30V13" stroke="#CE8A2E" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      IP-SAKTI
+    </a>
+    <p class="auth-side-quote">"Protect. Comply. Innovate."<span>Evidence-backed AI guidance for Ayurvedic intellectual property and regulatory decisions.</span></p>
+    <svg class="auth-leaf" width="220" height="220" viewBox="0 0 220 220" style="position:absolute; right:-40px; bottom:-40px;">
+      <circle cx="110" cy="110" r="108" stroke="#FBF8F1" stroke-width="1.5" fill="none"/>
+      <circle cx="110" cy="110" r="70" stroke="#FBF8F1" stroke-width="1.5" fill="none"/>
+    </svg>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1>Create your account</h1>
+      <p>Set up a demo profile to explore IP-SAKTI.</p>
+
+      <div id="formBanner" class="form-banner"></div>
+
+      <form id="signupForm" novalidate>
+        <div class="field" id="nameField">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Ekta Sharma" autocomplete="name" />
+          <div class="field-error">Enter your name.</div>
+        </div>
+
+        <div class="field" id="emailField">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <div class="field-error">Enter a valid email address.</div>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password">Password</label>
+          <div class="password-row">
+            <input type="password" id="password" name="password" placeholder="At least 6 characters" autocomplete="new-password" />
+            <button type="button" class="toggle-pw" data-target="password">Show</button>
+          </div>
+          <div class="field-error">Password must be at least 6 characters.</div>
+        </div>
+
+        <div class="field" id="confirmField">
+          <label for="confirm">Confirm password</label>
+          <div class="password-row">
+            <input type="password" id="confirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" />
+            <button type="button" class="toggle-pw" data-target="confirm">Show</button>
+          </div>
+          <div class="field-error">Passwords do not match.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create account</button>
+      </form>
+
+      <p class="auth-foot">Already have an account? <a href="login.html" class="link">Log in</a></p>
+
+      <div class="proto-note">
+        <span>⚠</span>
+        <span>Prototype-only authentication. Your details are stored only in this browser's local storage — no server, no verification, no real account.</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => IPSAKTI.initSignupPage());
+</script>
+</body>
+</html>
