@@ -12,7 +12,7 @@ window.IPSAKTI = window.IPSAKTI || {};
 (function (ns) {
 
   // Change this if your backend runs somewhere else.
- const API_BASE = "https://ip-sakti-sahayak-dppy.onrender.com/";
+ const API_BASE = "https://ip-sakti-sahayak-dppy.onrender.com";
 
   let currentJurisdiction = 'india';
 
